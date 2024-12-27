@@ -1,0 +1,140 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.welcome-hero {
+  position: relative;
+  background: url('./assets/images/welcome-hero/welcome-banner.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+}
+
+
+.welcome-hero:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /*background: rgba(42,45,84,.60);*/
+  background: rgba(22,25,64,.40);
+
+}
+.single-model-search{margin-bottom: 30px;}
+.single-model-search:last-child {margin-bottom: 0;}
+
+.single-model-search h2 {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+
+.model-select-icon{
+  position:relative;
+}
+.model-select-icon .form-control {
+  outline: 0!important;
+  box-shadow: none;
+  border: 1px solid #f8f8f8;
+  background: #f8f8f8;
+  height: 60px;
+}
+.model-select-icon select {
+  font-size: 16px;
+  color: #888f9d;
+  text-transform: capitalize;
+}
+.model-select-icon:after{
+  position: absolute;
+  content: "\f103";
+  right: 0px;
+  top: 0;
+  font-size: 10px;
+  color: #888f9d;
+  background: #f8f8f8;
+  height: 60px;
+  line-height: 60px;
+  width: 50px;
+  text-align: center;
+  font-family: "Flaticon";
+  pointer-events: none;
+  border: transparent;
+}
+
+select,input,textarea,button,.form-control{box-shadow:none;outline:0!important;}
+
+.model-select-icon .form-control {
+  outline: 0!important;
+  box-shadow: none;
+  border: 1px solid #f8f8f8;
+  background: #f8f8f8;
+  height: 60px;
+}
+
+.foot-email-box .form-control {
+  background:#26294d;
+  display: block;
+  padding: 15px 20px;
+  outline:0!important;
+  box-shadow:0 5px 15px rgba(0,0,0,.2);
+  border:0;
+}
+
+.welcome-btn {
+  display: inline-block;
+  width: 230px;
+  height: 60px;
+  background: #4e4ffa;
+  color: #fff;
+  border-radius: 3px;
+  margin-top: 55px;
+  -webkit-transition: .3s linear; 
+  -moz-transition:.3s linear; 
+  -ms-transition:.3s linear; 
+  -o-transition:.3s linear;
+  transition: .3s linear;
+}
+.welcome-btn:hover{
+  background: #0102fa;
+}
