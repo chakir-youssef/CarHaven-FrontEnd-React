@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useContext } from "react";
 import CarCard from "./CarCard";
-import { getData } from '../service/service';
-function FeaturedCars({cars}) {
+import { CarContext } from "../context/carContext";
 
+function FeaturedCars() {
 
+const {cars,references} = useContext(CarContext);
   return (
-    <div className="py-[112px] pb-[120px] mt-[100px]">
+    <div ref={references.featuredRef} id="featuredCars" className="py-[112px] pb-[120px] mt-[100px]">
       <div className="container mx-auto px-4">
         <div className="section-header">
           <p className="text-[#444a57] capitalize mb-[10px]">

@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, {  useContext, useEffect, useState } from "react";
+import { CarContext } from "../context/carContext";
 
-function Search({ onFilterChange, cars ,toReset }) {
+
+function Filter() {
+
+  const {cars,setCars,reset,setReset}=useContext(CarContext);
+  
   const [options, setOptions] = useState();
-  const [reset,setReset]=useState(false);
   const [formData, setFormData] = useState({
     year: "",
     make: "",
@@ -13,16 +17,14 @@ function Search({ onFilterChange, cars ,toReset }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ [name]: value });
+    setFormData((prevData) => ({...prevData , [name]: value}));
   };
 
-  useEffect(() => {
-    onFilterChange(formData);
-  }, [formData]);
+
 
   useEffect(() => {
    
-      if(cars != null){
+      if(cars.length != 0 ){
         const result = Object.keys(cars[0]).reduce((acc, key) => {
             acc[key] = [...new Set(cars.map((item) => item[key]))]; 
             return acc;
@@ -33,23 +35,43 @@ function Search({ onFilterChange, cars ,toReset }) {
       
   }, [cars]);
 
- useEffect(()=>{
-toReset(reset);
+ 
+  useEffect(() => {
+    
+    if (formData != null) {
+      const toFilter = Object.fromEntries(
+        Object.entries(formData).filter(([key, value]) => value != "")
+        
+      );
 
- },[reset]) 
+      
+      if (toFilter != null) {
+        for (const key of Object.keys(toFilter)) {
+          const newCars = cars.filter((car) => {
+            return car[key] == toFilter[key];
+          });
+          setCars(newCars);
+        }
+      }
+    }
+  }, [formData]);
+
+
+  
+
 
   return (
     <div>
       <div className="container mx-auto  px-4">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           <div className="col-span-12 flex justify-center items-center w-full">
-            <div className="absolute bottom-[-150px] w-full bg-white max-w-[70%]  p-10 shadow-lg rounded-lg">
+            <div className="absolute bottom-[-150px] w-full bg-light max-w-[70%]  p-10 shadow-lg rounded-lg">
               <div className="grid  grid-cols-5 gap-8">
                 <div className="single-model-search mb-4">
                   <h2 className="text-lg font-semibold mb-2">Select Year</h2>
                   <div className="relative">
                     <select
-                      name="year_"
+                      name="year"
                       onChange={handleChange}
                       value={formData.year}
                       className="form-control border border-gray-300 rounded-md w-full px-3 py-2"
@@ -68,7 +90,7 @@ toReset(reset);
                   <div className="relative">
                     <select
                       value={formData.body_style}
-                      name="bodyStyle"
+                      name="body_style"
                       onChange={handleChange}
                       className="form-control border border-gray-300 rounded-md w-full px-3 py-2"
                     >
@@ -136,7 +158,7 @@ toReset(reset);
                   </div>
                 </div>
               </div>
-              <button onClick={()=>setReset(!reset)} type="button" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Reset</button>
+              <button onClick={()=>setReset(!reset)} type="button" className="text-light bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Reset</button>
             </div>
           </div>
         </div>
@@ -145,4 +167,4 @@ toReset(reset);
   );
 }
 
-export default Search;
+export default Filter;

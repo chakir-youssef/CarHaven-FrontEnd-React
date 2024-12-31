@@ -1,7 +1,4 @@
-
 function CarCard({car}) {
-    const img='images/featured-cars/fc1.png';
-
   return (
       <div className="col-lg-3 col-md-4 col-sm-6">
           <div className="single-featured-cars">

@@ -1,5 +1,14 @@
 .App {
   text-align: center;
+  color: #818998;
+}
+
+h1,h2,h3,h4,h5,h6 { 
+	margin: 0;
+	color:#444a57;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: capitalize;
 }
 
 .App-logo {
@@ -13,52 +22,12 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 
-.welcome-hero {
-  position: relative;
-  background: url('./assets/images/welcome-hero/welcome-banner.jpg') no-repeat;
-  background-position: center;
-  background-size: cover;
-  z-index: 1;
-}
 
 
-.welcome-hero:before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  /*background: rgba(42,45,84,.60);*/
-  background: rgba(22,25,64,.40);
 
-}
+
 .single-model-search{margin-bottom: 30px;}
 .single-model-search:last-child {margin-bottom: 0;}
 
