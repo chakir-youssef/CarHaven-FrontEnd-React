@@ -8,7 +8,7 @@ function CarCard({car}) {
                   </div>
                   <div className="p-3">
                       <p className="text-xs text-gray-500 capitalize">
-                          model: {car.year_}
+                          model: {car.year}
                           <span className="inline-block mx-2">{car.miles} mi</span>
                           <span className="inline-block mr-2">{car.horsepower}HP</span>
                           {car.transmission}
@@ -17,7 +17,7 @@ function CarCard({car}) {
               </div>
               <div className="my-5">
                   <h2 className="text-sm mb-4">
-                      <a className="uppercase">{car.make} {car.model}</a>
+                      <p className="uppercase">{car.make} {car.model}</p>
                   </h2>
                   <h3 className="text-xs mb-2">${car.price}</h3>
                   <p className="text-xs text-gray-500">

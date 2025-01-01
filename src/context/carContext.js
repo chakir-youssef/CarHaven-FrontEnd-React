@@ -8,7 +8,8 @@ export const CarContext=createContext();
 export const CarProvider =({children}) =>{
     const featuredRef=useRef();
     const services  = useRef();
-    const references ={"featuredRef":featuredRef ,"services":services}
+    const home  = useRef();
+    const references ={"featuredRef":featuredRef ,"services":services ,"home":home}
     
     const [reset, setReset] = useState(false);
     const [cars, setCars] = useState([]);

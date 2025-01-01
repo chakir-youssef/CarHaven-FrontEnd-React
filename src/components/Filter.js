@@ -63,10 +63,9 @@ function Filter() {
   return (
     <div>
       <div className="container mx-auto  px-4">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           <div className="col-span-12 flex justify-center items-center w-full">
             <div className="absolute bottom-[-150px] w-full bg-light max-w-[70%]  p-10 shadow-lg rounded-lg">
-              <div className="grid  grid-cols-5 gap-8">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-4 md:gap-8">
                 <div className="single-model-search mb-4">
                   <h2 className="text-lg font-semibold mb-2">Select Year</h2>
                   <div className="relative">
@@ -158,11 +157,10 @@ function Filter() {
                   </div>
                 </div>
               </div>
-              <button onClick={()=>setReset(!reset)} type="button" className="text-light bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Reset</button>
+              <button  onClick={()=>setReset(!reset)} type="button" className="text-light bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-5 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Reset</button>
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 }

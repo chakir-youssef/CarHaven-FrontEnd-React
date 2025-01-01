@@ -14,7 +14,7 @@ const {cars,references} = useContext(CarContext);
           </p>
           <h2 className="relative text-[36px] font-medium pb-[35px]">featured cars</h2>
         </div>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="transition-all duration-2000 grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-4">
          {
           cars != null && cars.map((car)=>{
              return <CarCard key={car.id} car={car}/>

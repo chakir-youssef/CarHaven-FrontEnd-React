@@ -9,7 +9,7 @@ import { FaCar } from "react-icons/fa";
 function Services() {
   const {references} = useContext(CarContext);
   return (
-    <div ref={references.services} id="services" className="mx-16 mt-[400px] flex justify-center items-center space-x-16 ">
+    <div ref={references.services} className="mt-[300px] sm:mt-[400px] mx-10 grid grid-cols-1 md:grid-cols-2 place-items-center md:flex md:items-center md:justify-center md:space-x-5 space-y-5 md:space-y-0">
       <ServiceCard  Icon={FaCar} title="largest dealership of car" desc="Wide selection, excellent service, and complete automotive solutions."/>
       <ServiceCard Icon={MdOutlineCarRepair} title="unlimited repair warrenty" desc="Coverage for all repairs with no limits, ensuring peace of mind."/>
       <ServiceCard Icon={GrCar} title="insurence support" desc="Comprehensive assistance for all your insurance needs."/>
